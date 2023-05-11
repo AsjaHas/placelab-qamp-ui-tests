@@ -33,7 +33,7 @@ public class PositiveTestValidCredentialsByEnter {
 
         //validate log in form
         final boolean logInDisplayed = driver.findElement(By.id("login_form")).isDisplayed();
-        Assert.assertTrue(logInDisplayed, "Validate log in form");
+        Assert.assertTrue(logInDisplayed, "Validate log in form is displayed");
 
     }
 
@@ -58,6 +58,8 @@ public class PositiveTestValidCredentialsByEnter {
 
         driver.findElement(By.id("actions-nav-item")).click();
         driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/ul[2]/li/ul/li[4]/a")).click();
+        //*[@id="login_form"]/input[4]
+
     }
 
     @AfterTest

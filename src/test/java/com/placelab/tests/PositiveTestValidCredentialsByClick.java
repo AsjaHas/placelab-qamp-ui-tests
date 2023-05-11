@@ -32,7 +32,7 @@ public class PositiveTestValidCredentialsByClick {
 
         //validate log in form
         final boolean logInDisplayed = driver.findElement(By.id("login_form")).isDisplayed();
-        Assert.assertTrue(logInDisplayed, "Validate log in form");
+        Assert.assertTrue(logInDisplayed, "Validate log in form is displayed");
 
     }
 

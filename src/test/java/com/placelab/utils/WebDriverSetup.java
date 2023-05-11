@@ -10,9 +10,10 @@ public class WebDriverSetup {
         if (browser.equals("Chrome")){
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
-        } else {
+        } else if (browser.equals("Firefox")){
             WebDriverManager.firefoxdriver().setup();
             return new FirefoxDriver();
         }
+        throw new IllegalArgumentException("Please select Chrome or Firefox as browser");
     }
 }
