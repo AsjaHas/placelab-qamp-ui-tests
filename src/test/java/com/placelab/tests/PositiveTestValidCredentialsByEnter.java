@@ -47,7 +47,7 @@ public class PositiveTestValidCredentialsByEnter {
         final String actualNewPageUrl = driver.getCurrentUrl();
         final String expectedNewPageUrl = "https://demo.placelab.com/dashboard/traffic";
         Assert.assertEquals(actualNewPageUrl, expectedNewPageUrl, "Validate that user redirected to new page after login");
-        final boolean loggedUser = driver.findElement(By.id("user-name")).isDisplayed();
+        final boolean loggedUser = driver.findElement(By.cssSelector("div#user-name:contains('Asja Hasanovic')")).isDisplayed();
         Assert.assertTrue(loggedUser, "Validate there is a logged user");
 
         try {
@@ -57,8 +57,7 @@ public class PositiveTestValidCredentialsByEnter {
         }
 
         driver.findElement(By.id("actions-nav-item")).click();
-        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/ul[2]/li/ul/li[4]/a")).click();
-        //*[@id="login_form"]/input[4]
+        driver.findElement(By.linkText("Sign out")).click();
 
     }
 
