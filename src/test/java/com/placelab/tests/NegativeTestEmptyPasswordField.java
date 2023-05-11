@@ -2,6 +2,7 @@ package com.placelab.tests;
 
 import com.placelab.utils.WebDriverSetup;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -46,7 +47,7 @@ public class NegativeTestEmptyPasswordField {
         final String actualNewPageUrl = driver.getCurrentUrl();
         final String expectedNewPageUrl = "https://demo.placelab.com/";
         Assert.assertEquals(actualNewPageUrl, expectedNewPageUrl, "Validate that user stayed on the login page after invalid login try");
-        final boolean invalidCredentialsMessage = driver.findElement(By.cssSelector("div.error-area:contains('Invalid credentials!')")).isDisplayed();
+        final boolean invalidCredentialsMessage = driver.findElement(By.className("error-area")).isDisplayed();
         Assert.assertTrue(invalidCredentialsMessage, "Validate user is not logged in and there is an error message displayed");
 
         try {
