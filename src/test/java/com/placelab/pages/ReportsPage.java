@@ -22,16 +22,16 @@ public class ReportsPage {
     }
 
     public void validateReportsPage() {
-        Assert.assertEquals(driver.getCurrentUrl(), EXPECTED_REPORTS_PAGE_LINK, "Incorrect page url.");
-        Assert.assertEquals(driver.getTitle(), EXPECTED_REPORTS_PAGE_TITLE, "Incorrect page title is displayed.");
-        Assert.assertTrue(driver.findElement(REPORTS_HEADER).isDisplayed(), "Reports header on Reports page is not displayed.");
-        Assert.assertTrue(driver.findElement(SEARCH_BAR).isDisplayed(), "Search bar is not displayed.");
-        Assert.assertTrue(driver.findElement(SEARCH_FILTERS).isDisplayed(), "Search filters are not displayed.");
+        Assert.assertEquals(driver.getCurrentUrl(), EXPECTED_REPORTS_PAGE_LINK, "Validate correct page url.");
+        Assert.assertEquals(driver.getTitle(), EXPECTED_REPORTS_PAGE_TITLE, "Validate correct page title is displayed.");
+        Assert.assertTrue(driver.findElement(REPORTS_HEADER).isDisplayed(), "Validate reports header on Reports page is displayed.");
+        Assert.assertTrue(driver.findElement(SEARCH_BAR).isDisplayed(), "Validate search bar is displayed.");
+        Assert.assertTrue(driver.findElement(SEARCH_FILTERS).isDisplayed(), "Validate search filters are displayed.");
 
     }
 
     public void validateReportById(String reportId) {
         String requestReportId = "request_" + reportId;
-        Assert.assertEquals(driver.findElement(By.id(requestReportId)).getAttribute("id"), requestReportId, "Report with report ID is found.");
+        Assert.assertEquals(driver.findElement(By.id(requestReportId)).getAttribute("id"), requestReportId, "Validate report with report ID is found.");
     }
 }

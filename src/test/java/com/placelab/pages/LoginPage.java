@@ -22,17 +22,17 @@ public class LoginPage {
     }
 
     public void validateLoginPage() {
-        Assert.assertEquals(driver.getCurrentUrl(), LOGIN_URL, "Incorrect page url.");
-        Assert.assertEquals(driver.getTitle(), EXPECTED_LOGIN_PAGE_TITLE, "Incorrect page title is displayed.");
-        Assert.assertTrue(driver.findElement(LOGIN_FORM).isDisplayed(), "Login form is not displayed.");
-        Assert.assertTrue(driver.findElement(EMAIL_INPUT).isDisplayed(), "Email field is not displayed.");
-        Assert.assertTrue(driver.findElement(EMAIL_INPUT).isEnabled(), "Email input field is disabled.");
-        Assert.assertTrue(driver.findElement(PASSWORD_INPUT).isDisplayed(), "Password field is not displayed.");
-        Assert.assertTrue(driver.findElement(PASSWORD_INPUT).isEnabled(), "Password input field is disabled.");
-        Assert.assertTrue(driver.findElement(FORGOT_PASSWORD_LINK).isDisplayed(), "Forget password link is not displayed.");
-        Assert.assertTrue(driver.findElement(FORGOT_PASSWORD_LINK).isEnabled(), "Forget password link is not clickable.");
-        Assert.assertTrue(driver.findElement(LOGIN_BUTTON).isDisplayed(), "Login button is not displayed.");
-        Assert.assertTrue(driver.findElement(LOGIN_BUTTON).isEnabled(), "Login button is not clickable.");
+        Assert.assertEquals(driver.getCurrentUrl(), LOGIN_URL, "Validate correct page url.");
+        Assert.assertEquals(driver.getTitle(), EXPECTED_LOGIN_PAGE_TITLE, "Validate correct page title is displayed.");
+        Assert.assertTrue(driver.findElement(LOGIN_FORM).isDisplayed(), "Validate login form is displayed.");
+        Assert.assertTrue(driver.findElement(EMAIL_INPUT).isDisplayed(), "Validate email field is displayed.");
+        Assert.assertTrue(driver.findElement(EMAIL_INPUT).isEnabled(), "Validate email input field is enabled.");
+        Assert.assertTrue(driver.findElement(PASSWORD_INPUT).isDisplayed(), "Validate password field is displayed.");
+        Assert.assertTrue(driver.findElement(PASSWORD_INPUT).isEnabled(), "Validate password input field is enabled.");
+        Assert.assertTrue(driver.findElement(FORGOT_PASSWORD_LINK).isDisplayed(), "Validate forget password link is displayed.");
+        Assert.assertTrue(driver.findElement(FORGOT_PASSWORD_LINK).isEnabled(), "Validate forget password link is clickable.");
+        Assert.assertTrue(driver.findElement(LOGIN_BUTTON).isDisplayed(), "Validate login button is displayed.");
+        Assert.assertTrue(driver.findElement(LOGIN_BUTTON).isEnabled(), "Validate login button is clickable.");
     }
 
     public void enterCredentials(final String email, final String password) {
@@ -50,6 +50,6 @@ public class LoginPage {
 
     public void validateErrorMessageOnLogin() {
         final String actualLoginErrorMessage = driver.findElement(LOGIN_ERROR_MESSAGE).getText();
-        Assert.assertEquals(actualLoginErrorMessage, EXPECTED_LOGIN_ERROR_MESSAGE, "Incorrect error message is displayed.");
+        Assert.assertEquals(actualLoginErrorMessage, EXPECTED_LOGIN_ERROR_MESSAGE, "Validate correct error message is displayed.");
     }
 }

@@ -29,33 +29,33 @@ public class HomePage {
     }
 
     public void validateHomePage() {
-        Assert.assertEquals(driver.getCurrentUrl(), HOME_PAGE_URL, "Incorrect page url.");
-        Assert.assertEquals(driver.getTitle(), EXPECTED_HOME_PAGE_TITLE, "Incorrect page title is displayed.");
-        Assert.assertEquals(driver.findElement(USER_ROLE).getText(), EXPECTED_USER_ROLE, "Incorrect user role.");
-        Assert.assertTrue(driver.findElement(USER_DROPDOWN_MENU).isDisplayed(), "User dropdown menu is not displayed.");
-        Assert.assertTrue(driver.findElement(CREATE_REPORT_DROPDOWN).isDisplayed(), "Create report menu is not displayed.");
+        Assert.assertEquals(driver.getCurrentUrl(), HOME_PAGE_URL, "Validate correct page url.");
+        Assert.assertEquals(driver.getTitle(), EXPECTED_HOME_PAGE_TITLE, "Validate correct page title is displayed.");
+        Assert.assertEquals(driver.findElement(USER_ROLE).getText(), EXPECTED_USER_ROLE, "Validate correct user role.");
+        Assert.assertTrue(driver.findElement(USER_DROPDOWN_MENU).isDisplayed(), "Validate user dropdown menu is displayed.");
+        Assert.assertTrue(driver.findElement(CREATE_REPORT_DROPDOWN).isDisplayed(), "Validate Create report menu is displayed.");
     }
 
     public void clickOnUserDropdownMenu() {
-        Assert.assertTrue(driver.findElement(USER_DROPDOWN_MENU).isDisplayed(), "Dropdown menu arrow is not displayed. ");
+        Assert.assertTrue(driver.findElement(USER_DROPDOWN_MENU).isDisplayed(), "Validate dropdown menu arrow is displayed. ");
         driver.findElement(USER_DROPDOWN_MENU).click();
     }
 
     public void signOut() {
         this.clickOnUserDropdownMenu();
-        Assert.assertTrue(driver.findElement(SIGN_OUT_BUTTON).isDisplayed(), "Sign out button is not displayed.");
+        Assert.assertTrue(driver.findElement(SIGN_OUT_BUTTON).isDisplayed(), "Validate Sign out button is displayed.");
         this.driver.findElement(SIGN_OUT_BUTTON).click();
     }
 
     public void createReportDropdownClick() {
-        Assert.assertTrue(driver.findElement(CREATE_REPORT_DROPDOWN).isEnabled(), "Create report dropdown is not displayed.");
+        Assert.assertTrue(driver.findElement(CREATE_REPORT_DROPDOWN).isEnabled(), "Validate Create report dropdown is displayed.");
         driver.findElement(CREATE_REPORT_DROPDOWN).click();
     }
 
     public void singlePlaceSearchReportClick() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement singlePlaceSearchElement = wait.until(ExpectedConditions.visibilityOfElementLocated(SINGLE_PLACE_SEARCH));
-        Assert.assertTrue(singlePlaceSearchElement.isDisplayed(), "Single Place Search is displayed");
+        Assert.assertTrue(singlePlaceSearchElement.isDisplayed(), "Validate Single Place Search is displayed");
         driver.findElement(SINGLE_PLACE_SEARCH).click();
     }
 }
