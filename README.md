@@ -1,6 +1,6 @@
-Homework 02
+Homework
 
-1. Automate 3-5 tests for login functionality (make a good use od testNG annotations)
-2. Open a PR ready for review (on the existing repository)
+1. Refactor the existing tests to use Page Object Model
+2. Automate PlaceLab Smoke Test (Create Single Place Search Report)
 
-Note: Remember to avoid sharing your pesonal credentials on Github repositories.
+Note: Remember to avoid sharing your personal credentials on GitHub repositories.

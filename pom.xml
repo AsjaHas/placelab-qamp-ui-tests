@@ -15,6 +15,10 @@
         <testing.version>7.7.1</testing.version>
         <selenium.version>4.9.0</selenium.version>
         <webdrivermenager.version>5.3.2</webdrivermenager.version>
+        <javafaker.version>1.0.2</javafaker.version>
+        <restassured.version>5.3.0</restassured.version>
+        <json.version>20230227</json.version>
+        <asertj.version>3.24.2</asertj.version>
     </properties>
 
     <dependencies>
@@ -43,6 +47,38 @@
             <version>${testing.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${javafaker.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${restassured.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${asertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.junit.jupiter</groupId>-->
+<!--            <artifactId>junit-jupiter</artifactId>-->
+<!--            <version>RELEASE</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
     </dependencies>
 
